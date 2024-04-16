@@ -10,10 +10,10 @@ public class Menu {
 	static Cadastro cadastro=new Cadastro();
 	static int opcao = 1;
 	static boolean continua = true;
-	
+	static Scanner leia = new Scanner(System.in);
 	
 	public static void menuInicial() {
-		Scanner leia = new Scanner(System.in);
+		
 		
 		do {
 		System.out.println("-----------Login-----------"+"\nCPF: ");
@@ -42,7 +42,7 @@ public class Menu {
 	
 	
 	public static void menuAluno() {
-		Scanner leia = new Scanner(System.in);
+		
 		while(opcao!=0) {
 			System.out.println( """
 					----------- MENU -----------
@@ -92,7 +92,7 @@ public class Menu {
 }
 		
 	public static void menuPersonal() {
-		Scanner leia = new Scanner(System.in);
+		
 		
 	
 		while(opcao!=0){
@@ -134,8 +134,6 @@ public class Menu {
 
 	public static void menuFuncionario() {
 		
-		Scanner leia = new Scanner(System.in);
-		
 		while(opcao!=0){
 			System.out.println("""
 				----------- MENU -----------
@@ -155,32 +153,32 @@ public class Menu {
 		
 		case 1:
 			Cadastro.cadastraPlano();
-			opcao = 10;
+			
 			break;	
 			
 		case 2:
 			Cadastro.cadastraAluno();
-			opcao = 10;
+			
 			break;	
 			
 		case 3:
 			Cadastro.cadastraPersonal();
-			opcao = 10;
+			
 			break;
 			
 		 case 4:
 			Emitir.relatorioPlanos(Cadastro.todosPlanos);
-			opcao = 10;
+			
 			break;
 	        
 		case 5:
 			Emitir.relatorioAluno(Cadastro.todosAlunos);
-			opcao = 10;
+		
 			break;
 			
 		case 6:
 			Emitir.relatorioPersonal(Cadastro.todosPersonal);
-			opcao = 10;
+			
 			break;	
 			
 		case 7:
@@ -195,8 +193,7 @@ public class Menu {
 			
 		
 	}
-		
-		leia.close();
+	leia.close();
 }	
 	
 }

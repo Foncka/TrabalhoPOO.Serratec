@@ -48,12 +48,18 @@ public class Login {
 	
 
 	public static Login loginAgora(){
+		
 		LeitorArquivo.lerRelatorioPlanos(Cadastro.todosPlanos);
         LeitorArquivo.lerRelatorioAlunos(Cadastro.todosAlunos);
         LeitorArquivo.lerRelatorioPersonal(Cadastro.todosPersonal);
         LeitorArquivo.lerRelatorioFuncionario(Cadastro.todosFuncionarios);
+        EscreverArquivo.escreverArquivoPlanos(Cadastro.todosPlanos);
+        EscreverArquivo.escreverArquivoAlunos(Cadastro.todosAlunos);
+        EscreverArquivo.escreverArquivoPersonal(Cadastro.todosPersonal);
+        EscreverArquivo.escreverArquivoFuncionarios(Cadastro.todosFuncionarios);
+		
         
-		Scanner leia = new Scanner(System.in);
+        Scanner leia = new Scanner(System.in);
 		String cpf;
 		String senha = null;
 		String validador;

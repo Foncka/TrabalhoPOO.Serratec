@@ -41,13 +41,9 @@ public class Cadastro {
 	public static List<Login> todosLogin = new ArrayList<>();
 	public static List<Funcionario> todosFuncionarios = new ArrayList<>();
 	static Plano planos;
-	
+	static Scanner leia = new Scanner(System.in);
 	
 	public static void cadastraPersonal(){
-		Scanner leia = new Scanner(System.in);
-		
-		LeitorArquivo.lerRelatorioPersonal(todosPersonal);
-		LeitorArquivo.lerArquivoLogin(todosLogin);
 		
 		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
@@ -88,19 +84,11 @@ public class Cadastro {
 		todosPersonal.add(personal);
 		
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
-		
 		EscreverArquivo.escreverArquivoPersonal(todosPersonal);
-		
-		leia.close();
-		
+			
 		}
 
 	public static void cadastraAluno(){
-		Scanner leia = new Scanner(System.in);
-		
-		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
-		LeitorArquivo.lerArquivoLogin(todosLogin);
-		LeitorArquivo.lerRelatorioAlunos(todosAlunos);
 		
 		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
@@ -134,15 +122,11 @@ public class Cadastro {
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoAlunos(todosAlunos);
-		
 		}
 
 	
 	public static void cadastraPlano(){
-		Scanner leia = new Scanner(System.in);
-		
-		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
-		
+				
 		System.out.println("Digite o Nome do Plano: ");
 		nome=leia.nextLine();
 		
@@ -159,15 +143,11 @@ public class Cadastro {
 		todosPlanos.add(plano);
 		
 		EscreverArquivo.escreverArquivoPlanos(todosPlanos);
-		
-		leia.close();
 		}
 
 	static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
 
 	public static void criarAvalicao () {
-			
-			Scanner leia = new Scanner(System.in);
 			
 			System.out.println("Informe o nome aluno: ");
 			String alunoAvalicao=leia.nextLine();
