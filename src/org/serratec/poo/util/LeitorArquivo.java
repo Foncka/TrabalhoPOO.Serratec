@@ -4,10 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.serratec.poo.classes.Aluno;
+import org.serratec.poo.classes.Avaliacao;
 import org.serratec.poo.classes.Funcionario;
 import org.serratec.poo.classes.Login;
 import org.serratec.poo.classes.PersonalTrainer;
@@ -25,7 +27,7 @@ public class LeitorArquivo {
 				String[] partes = linha.split(";");
 				String cpf = partes[0];
 				String senha = partes[1];
-				String tipoConta = partes[2];
+				int tipoConta = Integer.parseInt(partes[2]);
 				
 				Login login1 = new Login(cpf,senha,tipoConta);
 				login.add(login1);
@@ -129,26 +131,33 @@ public class LeitorArquivo {
 	}
 	
 	
-	public static void lerRelatorioEquipe(List<Funcionario> funcionarios) {
+	public static void lerArquivoAvalicao(List<Avaliacao> todasAvaliacoes) {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("ListaDePlanos.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("ListaDeAvaliacao.txt"));
 			String linha;
 			while(br.ready()) {
 				
 				linha = br.readLine();
 				
 				String[] separador = linha.split(";");
+							
+				String alunoAvalicao = separador[0];
+				String personalAvalicao = separador[1];
+				String dataHoraAvalicao = separador [2];
+				String descricaoAvaliacao = separador[3];
+				List<Login> agendamento;
 				
-				String nome= separador[0];
-				String duracao=separador[1];
-				double valor = Double.parseDouble(separador[3]);
-				String descricao = separador[2];
+				//agendamento.add(new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao));
 				
-				//funcionarios.add(new Funcionario(nome,duracao,descricao,valor));
+				//todasAvaliacoes.add(new Avaliacao(descricaoAvaliacao,agendamento));
+				
 			}
 			
 		}catch(IOException e) {
 			System.out.println();
 		}
+		
 	}
+
+	
 }

@@ -2,6 +2,8 @@ package org.serratec.poo.util;
 
 import java.util.Scanner;
 
+import org.serratec.poo.classes.Login;
+
 public class Menu {
 	
 	static Cadastro cadastro=new Cadastro();
@@ -18,14 +20,25 @@ public class Menu {
 		
 		System.out.println("Senha: ");
 		String senha=leia.nextLine();
-		
-		//if(cpf == && ) {
-			
-		//}
-		
+				
 		} while (continua);
 		leia.close();
 	}
+	
+	public static void menuPessoa(Login login1) {
+		
+		int menu=login1.getTipoconta();
+	
+			if(menu == 1){		
+			 Menu.menuAluno();
+			}else if(menu==2){
+			Menu.menuPersonal();
+			} else if(menu==3){
+			Menu.menuFuncionario();
+			}
+	}
+	
+	
 	
 	public static void menuAluno() {
 		Scanner leia = new Scanner(System.in);
@@ -60,7 +73,7 @@ public class Menu {
 			break;
 			
 		case 2 :
-			
+			Cadastro.criarAvalicao();
 			break;
 		
 		case 3 :

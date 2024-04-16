@@ -15,10 +15,10 @@ public class Login {
 	
 	private String cpfLogin;
 	private String senhaLogin;
-	private static String tipoConta;
-	private static boolean valida = false;
-	private String getCpfLogin;
-	public Login(String cpfLogin, String senhaLogin, String tipoConta) {
+	private int tipoConta;
+	private  boolean valida = false;
+	
+	public Login(String cpfLogin, String senhaLogin, int tipoConta) {
 		this.cpfLogin = cpfLogin;
 		this.senhaLogin = senhaLogin;
 		this.tipoConta = tipoConta;
@@ -34,7 +34,7 @@ public class Login {
 		return senhaLogin;
 	}
 	
-	public String getTipoconta() {
+	public int getTipoconta() {
 		return tipoConta;
 	}
 	public void setSenhaLogin(String senhaLogin) {
@@ -45,6 +45,7 @@ public class Login {
 		
 	}
 	
+
 	public static Login loginAgora(){
 		
 		Scanner leia = new Scanner(System.in);
@@ -52,9 +53,9 @@ public class Login {
 		String senha = null;
 		String validador;
 		boolean valida = false;
-		Login login = new Login(null,null,null);
+		Login login = new Login(null,null,0);
 		List<Login> todosLogin = new ArrayList<>();
-		int cont=0;	
+			
 		LeitorArquivo.lerArquivoLogin(todosLogin);
 					
 					
@@ -100,9 +101,8 @@ public class Login {
 					}while(valida!=true);
 					
 					System.out.println(login);
-				
-		
-		return (login);
+
+					return (login);
 	
 		
 	}
@@ -130,7 +130,7 @@ public class Login {
 	
 	@Override
 	public String toString() {
-		return "Login [cpfLogin=" + cpfLogin + ", senhaLogin=" + senhaLogin + ", tipoConta=" + tipoConta + "]";
+		return "Login \n CPF: " + cpfLogin + " Senha: " + senhaLogin + " Função:" + tipoConta;
 	}
 	public CharSequence formatarArquivoLogin() {
 		return cpfLogin + ";"+ senhaLogin +";"+ tipoConta;

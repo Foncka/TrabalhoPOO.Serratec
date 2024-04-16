@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
+import org.serratec.poo.classes.Avaliacao;
 import org.serratec.poo.classes.Login;
 import org.serratec.poo.classes.PersonalTrainer;
 import org.serratec.poo.classes.Plano;
@@ -77,7 +79,7 @@ public class Cadastro {
 		
 		personal.setHoraAtendimento(horaAtendimento);
 		
-		Login login = new Login(cpf,senha,"Personal");
+		Login login = new Login(cpf,senha,2);
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 			
@@ -123,7 +125,7 @@ public class Cadastro {
 		
 		Aluno aluno = new Aluno(nome, cpf, senha, dataNascimento,cont);
 		todosAlunos.add(aluno);
-		Login login = new Login(cpf,senha,"Aluno");
+		Login login = new Login(cpf,senha,3);
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoAlunos(todosAlunos);
@@ -155,5 +157,30 @@ public class Cadastro {
 		leia.nextLine();
 		}
 
-	
+	static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
+
+	public static void criarAvalicao () {
+			
+			Scanner leia = new Scanner(System.in);
+			
+			System.out.println("Informe o nome aluno: ");
+			String alunoAvalicao=leia.nextLine();
+			
+			System.out.println("Informe Personal Trainer: ");
+			String personalAvalicao=leia.nextLine();
+			
+			System.out.println("Informa a data e a hora: ");
+			String dataHoraAvalicao=leia.nextLine();
+			
+			System.out.println("Qual o tipo da avaliação: ");
+			String descricaoAvaliacao=leia.nextLine();
+			
+			//Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
+			
+			//todasAvaliacoes.add (new Avaliacao(descricaoAvaliacao, agendamento));
+			
+			//LeitorArquivo.lerArquivoAvalicao(todasAvaliacoes);
+			//EscreverArquivo.escreverArquivoAvaliacao(todasAvaliacoes);
+			
+		}
 }

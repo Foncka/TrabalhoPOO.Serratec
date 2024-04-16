@@ -1,23 +1,17 @@
 package org.serratec.poo.classes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Avaliacao{
-	//private Aluno aluno;
-	//private PersonalTrainer personal;
-	//private LocalDateTime data;
-	private List<Agendamento> agendamento = new ArrayList<>();
-	private String descricao;
-	
-	public Avaliacao(String descricao) {
-		
-		//this.aluno = aluno;
-		//this.personal = personal;
-		//this.data = data;
-		this.descricao = descricao;
-	}
 
+	
+	
+	private String descricao;
+	private Agendamento agendamento;
+	
+	public Avaliacao(String descricao, Agendamento agendamento) {
+		this.descricao = descricao;
+		this.agendamento = agendamento;
+	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -25,26 +19,30 @@ public class Avaliacao{
 	public void cadastrarAgendamento() {
 		
 	}
-	//public Aluno getAluno() {
-	//	return aluno;
-	//}
+	
 
-	//public PersonalTrainer getPersonal() {
-	//	return personal;
-	//}
+	public Agendamento getAgendamento() {
+		return agendamento;
+	}
 
-	//public LocalDateTime getData() {
-	//	return data;
-	//}
+	public void setAgendamento(Agendamento agendamento) {
+		this.agendamento = agendamento;
+	}
 
-	/*
+	public String formatarArquivoAvaliacao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public String toString() {
-		return "\nAluno: " + aluno + 
-				"\nPersonal: " + personal + 
-				"\nData: " + data + 
-				"\nDescricao: " + descricao;
+		return "Avaliacao [descricao=" + descricao + ", agendamento=" + agendamento + "]";
 	}
-	*/
+
+	
+
+	
+	
+
 	
 }
