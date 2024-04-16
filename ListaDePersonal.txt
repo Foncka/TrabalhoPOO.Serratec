@@ -1,2 +1,6 @@
 Matheus;123;123;123;123;null
-Arthur;1234;123;asdfg;101010101;sgasfg
+Arthur;1234;123;asdfg;101010101;null
+Kaiky;8888;4444444;RT29867;05/05/2000;null
+Kaiky;44444;2222222;RT222222;05/05/2000;null
+aaa;aaa;aaaaaa;qqqqq;aaa;null
+aaaaaa;aaaaa;aaaaaaaaaa;aaaaaaaaaaaaa;aaaaa;aaaaaaaaaaa

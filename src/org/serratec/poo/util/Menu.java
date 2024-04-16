@@ -90,14 +90,17 @@ public class Menu {
 			
 		default:
 			System.out.println("Numero Invalido");
-			leia.next();
+			
 		}
+
 	}while(continua);
-		leia.close();
+	leia.close();
 }
 		
 	public static void menuPersonal() {
 		Scanner leia = new Scanner(System.in);
+		
+		do {
 		System.out.println("""
 				----------- MENU -----------
 				Oque deseja fazer?
@@ -135,9 +138,11 @@ public class Menu {
 		
 		default:
 			System.out.println("Numero Invalido");
-			leia.next();
-		}while (continua);
-		leia.close();
+			
+		}
+		
+	}while(continua);
+	leia.close();	
 }
 
 	public static void menuFuncionario() {
@@ -201,7 +206,7 @@ public class Menu {
 			
 		default:
 			System.out.println("Numero Invalido");
-			leia.next();
+			
 		}
 		 			
 			

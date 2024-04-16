@@ -82,12 +82,9 @@ public class Cadastro {
 		
 		Login login = new Login(cpf,senha,2);
 		todosLogin.add(login);
-		EscreverArquivo.escreverArquivoLogin(todosLogin);
-			
 		todosPersonal.add(personal);
-		System.out.println(todosPersonal);
+		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoPersonal(todosPersonal);
-		
 		leia.close();
 		}
 

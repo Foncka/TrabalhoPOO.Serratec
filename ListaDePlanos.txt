@@ -1,3 +1,4 @@
 cc,cc,cc,20.0
 aa,aa,aa,10.0
 aa,aa,aa,19.0
+Gold,1 Mês,plano academia e natação,150.0

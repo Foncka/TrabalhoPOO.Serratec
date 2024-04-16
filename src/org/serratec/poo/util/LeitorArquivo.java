@@ -21,10 +21,12 @@ public class LeitorArquivo {
 		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("ListaLogin.txt"));
+			
 			String linha;
+			
 			while(br.ready()) {
 				linha = br.readLine();
-				String[] partes = linha.split(";");
+				String [] partes = linha.split(";");
 				String cpf = partes[0];
 				String senha = partes[1];
 				int tipoConta = Integer.parseInt(partes[2]);
@@ -64,7 +66,7 @@ public class LeitorArquivo {
 				
 				planos.add(new Plano(nome,duracao,descricao,valor));
 			}
-			
+			br.close();
 		}catch(IOException e) {
 			System.out.println();
 		}
@@ -91,7 +93,7 @@ public class LeitorArquivo {
 				
 				alunos.add(new Aluno(nome,cpf,senha,nascimento,numeroPlano));
 			}
-			
+			br.close();
 		}catch(IOException e) {
 			System.out.println();
 		}
@@ -123,14 +125,14 @@ public class LeitorArquivo {
 				
 				personal.add(new PersonalTrainer(nome,cpf,senha,cref,nascimento));
 			}
-			
+			br.close();
 		}catch(IOException e) {
 			System.out.println();
 		}
 		
 	}
 	
-	
+
 	public static void lerArquivoAvalicao(List<Avaliacao> todasAvaliacoes) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("ListaDeAvaliacao.txt"));
@@ -152,7 +154,7 @@ public class LeitorArquivo {
 				//todasAvaliacoes.add(new Avaliacao(descricaoAvaliacao,agendamento));
 				
 			}
-			
+			br.close();
 		}catch(IOException e) {
 			System.out.println();
 		}
@@ -175,13 +177,12 @@ public class LeitorArquivo {
 				String cargo= separador[5];
 				funcionarios.add(new Funcionario(nome,cpf,senha,dataNascimento,cargo));
 			}
-			
+			br.close();
 		}catch(IOException e) {
 			System.out.println();
 		}
 	}
-}
+
 }
 	
 	
-}
