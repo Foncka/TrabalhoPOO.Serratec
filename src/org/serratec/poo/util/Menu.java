@@ -184,7 +184,7 @@ public class Menu {
 			break;
 			
 		 case 4:
-	        Emitir.relatorioPlanos(Cadastro.todosPlanos);
+	        
 	        break;
 	        
 		case 5:

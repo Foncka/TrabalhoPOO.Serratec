@@ -14,6 +14,7 @@ import java.util.Scanner;
 import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
 import org.serratec.poo.classes.Avaliacao;
+import org.serratec.poo.classes.Funcionario;
 import org.serratec.poo.classes.Login;
 import org.serratec.poo.classes.PersonalTrainer;
 import org.serratec.poo.classes.Plano;
@@ -183,4 +184,5 @@ public class Cadastro {
 			//EscreverArquivo.escreverArquivoAvaliacao(todasAvaliacoes);
 			
 		}
+	
 }

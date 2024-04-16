@@ -158,6 +158,30 @@ public class LeitorArquivo {
 		}
 		
 	}
-
+	
+	public static void lerRelatorioEquipe(List<Funcionario> funcionarios) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("ListaFuncionarios.txt"));
+			String linha;
+			while(br.ready()) {
+				
+				linha = br.readLine();
+				
+				String[] separador = linha.split(";");
+				String nome= separador[0];
+				String cpf=separador[1];
+				String senha = separador[3];
+				String dataNascimento= separador[4];
+				String cargo= separador[5];
+				funcionarios.add(new Funcionario(nome,cpf,senha,dataNascimento,cargo));
+			}
+			
+		}catch(IOException e) {
+			System.out.println();
+		}
+	}
+}
+}
+	
 	
 }
