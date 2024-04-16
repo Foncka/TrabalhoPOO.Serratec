@@ -35,10 +35,11 @@ public class Cadastro {
 	static String duracao;
 	static String descricao;
 	static double valor;
-	static List<Plano> todosPlanos= new ArrayList<>();
-	static List<PersonalTrainer> todosPersonal = new ArrayList<>();
-	static List<Aluno> todosAlunos = new ArrayList<>();
-	static List<Login> todosLogin = new ArrayList<>();
+	public static List<Plano> todosPlanos= new ArrayList<>();
+	public static List<PersonalTrainer> todosPersonal = new ArrayList<>();
+	public static List<Aluno> todosAlunos = new ArrayList<>();
+	public static List<Login> todosLogin = new ArrayList<>();
+	public static List<Funcionario> todosFuncionarios = new ArrayList<>();
 	static Plano planos;
 	
 	
@@ -81,11 +82,17 @@ public class Cadastro {
 		personal.setHoraAtendimento(horaAtendimento);
 		
 		Login login = new Login(cpf,senha,2);
+		
 		todosLogin.add(login);
+		
 		todosPersonal.add(personal);
+		
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
+		
 		EscreverArquivo.escreverArquivoPersonal(todosPersonal);
+		
 		leia.close();
+		
 		}
 
 	public static void cadastraAluno(){
@@ -127,6 +134,7 @@ public class Cadastro {
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoAlunos(todosAlunos);
+		
 		}
 
 	
@@ -146,13 +154,13 @@ public class Cadastro {
 		
 		System.out.println("Digite o valor do plano: ");
 		valor=leia.nextDouble();
-		
+		leia.nextLine();
 		Plano plano= new Plano(nome,duracao,descricao,valor);
 		todosPlanos.add(plano);
 		
 		EscreverArquivo.escreverArquivoPlanos(todosPlanos);
 		
-		leia.nextLine();
+		leia.close();
 		}
 
 	static List<Avaliacao> todasAvaliacoes = new ArrayList<>();

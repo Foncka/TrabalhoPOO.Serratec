@@ -161,7 +161,7 @@ public class LeitorArquivo {
 		
 	}
 	
-	public static void lerRelatorioEquipe(List<Funcionario> funcionarios) {
+	public static void lerRelatorioFuncionario(List<Funcionario> funcionarios) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("ListaFuncionarios.txt"));
 			String linha;

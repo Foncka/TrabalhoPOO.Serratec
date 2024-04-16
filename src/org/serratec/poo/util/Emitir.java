@@ -11,7 +11,7 @@ import org.serratec.poo.classes.Plano;
 public class Emitir {
 	
 	
-	public void relatorioPlanos(List<Plano> planos) {
+	public static void relatorioPlanos(List<Plano> planos) {
 		if (planos == null) {
 		
 			System.out.println("Não existe planos cadastrados.");
@@ -23,7 +23,7 @@ public class Emitir {
             
             
         }
-        public void relatorioAluno(List<Aluno> todosAlunos) {
+        public static void relatorioAluno(List<Aluno> todosAlunos) {
     		if (todosAlunos == null) {
     		
     			System.out.println("Não existe planos cadastrados.");
@@ -37,7 +37,7 @@ public class Emitir {
 	}
 	
         }
-        public void relatorioPersonal(List<PersonalTrainer> todosPersonal) {
+        public static void relatorioPersonal(List<PersonalTrainer> todosPersonal) {
     		if (todosPersonal == null) {
     		
     			System.out.println("Não existe Equipe.");

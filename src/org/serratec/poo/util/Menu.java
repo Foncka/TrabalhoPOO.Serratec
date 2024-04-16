@@ -1,5 +1,6 @@
 package org.serratec.poo.util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.serratec.poo.classes.Login;
@@ -7,7 +8,7 @@ import org.serratec.poo.classes.Login;
 public class Menu {
 	
 	static Cadastro cadastro=new Cadastro();
-	static int opcao = 0;
+	static int opcao = 1;
 	static boolean continua = true;
 	
 	
@@ -42,7 +43,7 @@ public class Menu {
 	
 	public static void menuAluno() {
 		Scanner leia = new Scanner(System.in);
-		do {
+		while(opcao!=0) {
 			System.out.println( """
 					----------- MENU -----------
 					Oque deseja fazer?
@@ -57,17 +58,10 @@ public class Menu {
 			
 			opcao = leia.nextInt();
 			
-			if(leia.hasNextInt()){
-				opcao = leia.nextInt();
-					}else {
-						opcao = -1;
-					}
+			
 		
 		switch(opcao){
-		case 0 :
-			continua=false;
-			break;
-			
+					
 		case 1 :
 			
 			break;
@@ -100,7 +94,8 @@ public class Menu {
 	public static void menuPersonal() {
 		Scanner leia = new Scanner(System.in);
 		
-		do {
+	
+		while(opcao!=0){
 		System.out.println("""
 				----------- MENU -----------
 				Oque deseja fazer?
@@ -113,17 +108,9 @@ public class Menu {
 		
 		opcao = leia.nextInt();
 		
-		if(leia.hasNextInt()){
-			opcao = leia.nextInt();
-				}else {
-					opcao = -1;
-				}
+		
 		switch(opcao){
-		
-		case 0:
-			continua=false;
-			break;
-		
+				
 		case 1:
 			
 			break;
@@ -141,7 +128,7 @@ public class Menu {
 			
 		}
 		
-	}while(continua);
+	}
 	leia.close();	
 }
 
@@ -149,7 +136,7 @@ public class Menu {
 		
 		Scanner leia = new Scanner(System.in);
 		
-		do{
+		while(opcao!=0){
 			System.out.println("""
 				----------- MENU -----------
 				Oque deseja fazer?
@@ -161,57 +148,53 @@ public class Menu {
 				[6] - Emitir relatório de equipe (funcionários e personal trainers)
 				[7] - Emitir relação de avaliações físicas por período
 				[O] - Logout
-							""");
-		
-		if(leia.hasNextInt()){
+						""");
 			opcao = leia.nextInt();
-			}else {
-				opcao = -1;
-			}
-			
+						
 		switch(opcao){
-		
-		case 0:
-			continua = false;
-			break;
 		
 		case 1:
 			Cadastro.cadastraPlano();
-			
+			opcao = 10;
 			break;	
 			
 		case 2:
 			Cadastro.cadastraAluno();
+			opcao = 10;
 			break;	
 			
 		case 3:
 			Cadastro.cadastraPersonal();
+			opcao = 10;
 			break;
 			
 		 case 4:
-	        
-	        break;
+			Emitir.relatorioPlanos(Cadastro.todosPlanos);
+			opcao = 10;
+			break;
 	        
 		case 5:
-			
+			Emitir.relatorioAluno(Cadastro.todosAlunos);
+			opcao = 10;
 			break;
 			
 		case 6:
-		
+			Emitir.relatorioPersonal(Cadastro.todosPersonal);
+			opcao = 10;
 			break;	
 			
 		case 7:
-		
+			//[7] - Emitir relação de avaliações físicas por período
 			break;	
 			
 		default:
 			System.out.println("Numero Invalido");
-			
+			break;
 		}
 		 			
 			
 		
-	}while (continua);
+	}
 		
 		leia.close();
 }	

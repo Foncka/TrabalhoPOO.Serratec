@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.serratec.poo.util.Cadastro;
 import org.serratec.poo.util.EscreverArquivo;
 import org.serratec.poo.util.LeitorArquivo;
 import org.serratec.poo.util.Menu;
@@ -47,7 +48,11 @@ public class Login {
 	
 
 	public static Login loginAgora(){
-		
+		LeitorArquivo.lerRelatorioPlanos(Cadastro.todosPlanos);
+        LeitorArquivo.lerRelatorioAlunos(Cadastro.todosAlunos);
+        LeitorArquivo.lerRelatorioPersonal(Cadastro.todosPersonal);
+        LeitorArquivo.lerRelatorioFuncionario(Cadastro.todosFuncionarios);
+        
 		Scanner leia = new Scanner(System.in);
 		String cpf;
 		String senha = null;
