@@ -87,7 +87,7 @@ public class EscreverArquivo {
 			
             for (Funcionario p : funcionarios) {
 				 if(br.readLine() == null) {
-				bw.append(p.formatarArquivoFuncionario());
+				bw.append(p.formatarArquivoFuncionario()+"\n");
 				 }
 			}
 			
@@ -109,10 +109,10 @@ public static void escreverArquivoLogin(List<Login> login) {
 		
         for (Login p : login) {
 			 if(br.readLine() == null) {
-			bw.append(p.formatarArquivoLogin());
+			bw.append(p.formatarArquivoLogin()+"\n");
 			 }
 		}
-		
+        bw.flush();
 		bw.close();
         br.close();
 		

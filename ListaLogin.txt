@@ -1,0 +1,3 @@
+111;9999;"Personal"
+222;8888;"Aluno"
+333;7777;"Funcionario"

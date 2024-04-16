@@ -18,19 +18,14 @@ public class LeitorArquivo {
 	public static void lerArquivoLogin(List<Login> login) {
 		
 		try {
-			
-			BufferedReader br = new BufferedReader(new FileReader("ListaPessoas.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("ListaLogin.txt"));
 			String linha;
-	
 			while(br.ready()) {
-				
 				linha = br.readLine();
 				String[] partes = linha.split(";");
-				
 				String cpf = partes[0];
 				String senha = partes[1];
 				String tipoConta = partes[2];
-				
 				
 				Login login1 = new Login(cpf,senha,tipoConta);
 				login.add(login1);
@@ -46,10 +41,7 @@ public class LeitorArquivo {
 				
 				System.out.println("Erro acessar aquivo"+ e.getMessage());
 			}
-		
-	
-		
-		
+				
 	}
 
 	public static void lerRelatorioPlanos(List<Plano> planos) {

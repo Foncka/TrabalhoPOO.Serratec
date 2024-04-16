@@ -62,7 +62,7 @@ public class ValidarLogin {
 			
 			if(cpf.equals(cpfLog) && senha.equals(senhaLog)) {
 				tipoPessoa ="Personal";
-			}
+			}		
 		}
 		
 		}catch(IOException e) {
@@ -89,7 +89,7 @@ public class ValidarLogin {
 			
 			if(cpf.equals(cpfLog) && senha.equals(senhaLog)) {
 				tipoPessoa ="Funcionario";
-			}
+			}		
 		}
 		
 		}catch(IOException e) {

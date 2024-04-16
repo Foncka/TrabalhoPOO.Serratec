@@ -45,45 +45,66 @@ public class Login {
 		
 	}
 	
-	public static void loginAgora(){
+	public static Login loginAgora(){
 		
 		Scanner leia = new Scanner(System.in);
 		String cpf;
-		String senha;
-		boolean continua = true;
-		
-		while(continua) {
-			
-			
-		System.out.println("Digite o CPF:");
-		cpf=leia.nextLine();
-		
-		System.out.println("Digite senha:");
-		senha=leia.nextLine();
-		
-		String loginAluno = ValidarLogin.validaLoginAluno(cpf, senha);
-		String loginPersonal = ValidarLogin.validaLoginPersonal(cpf, senha);
-		String loginFunc = ValidarLogin.validaLoginFuncionario(cpf, senha);
-		
-		if(loginAluno.equals("Aluno")) {
-			Menu.menuAluno();
-			continua = false;	
-			
-			}else if (loginPersonal.equals("Personal")) {
-				Menu.menuPersonal();
-				continua = false;		
-				
-				}else if (loginFunc.equals("Funcionario")) {
-					Menu.menuFuncionario();
-					continua = false;							
+		String senha = null;
+		String validador;
+		boolean valida = false;
+		Login login = new Login(null,null,null);
+		List<Login> todosLogin = new ArrayList<>();
+		int cont=0;	
+		LeitorArquivo.lerArquivoLogin(todosLogin);
 					
-					}else {
-						System.out.println("Login e/ou senha invalido");
+					
+					do {
+						
+					{
+						
+						System.out.println("Digite o CPF:");
+						cpf=leia.nextLine();
+													
+						for(Login login1 : todosLogin) 
+						{
+						validador=login1.getCpfLogin();				
+						if(cpf.equals(validador))
+							{
+							System.out.println("CPF valido");
+							senha=login1.getSenhaLogin();
+							login=login1;
+							valida = true;
+							break;
+							}
+						
+						}
+							if(valida!=true){
+							System.out.println("CPF INVALIDO");
+							}
+						
 					}
-		}
-		leia.close();
+					
+					}while(valida!=true);
+					
+										
+					valida=false;
+					
+					do {
+					System.out.println("Digite senha:");
+					String validaSenha=leia.nextLine();
+					if(validaSenha.equals(senha)) {
+						valida=true;
+					}else 	{
+						System.out.println("Senha errada!");
+							}
+					}while(valida!=true);
+					
+					System.out.println(login);
+				
+		
+		return (login);
 	
-	
+		
 	}
 	
 	public Login escreveLogin(List<Login> listaLog) {
