@@ -123,7 +123,6 @@ public static void escreverArquivoLogin(List<Login> login) {
 	}
 }
 
-@SuppressWarnings("resource")
 public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 	try {
 		BufferedWriter bw = new BufferedWriter(new FileWriter("ListaDeAvaliacao.txt"));
@@ -143,6 +142,4 @@ public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 		System.out.println("Erro pipii popopo");
 	}
 }
-
-
 }

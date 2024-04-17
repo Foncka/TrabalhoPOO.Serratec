@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+
 import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
 import org.serratec.poo.classes.Avaliacao;
@@ -157,8 +158,6 @@ public class LeitorArquivo {
 		}
 		
 	}
-		
-	
 	
 	public static void lerRelatorioFuncionario(List<Funcionario> funcionarios) {
 		try {

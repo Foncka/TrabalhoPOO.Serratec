@@ -3,6 +3,8 @@ package org.serratec.poo.classes;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
 
 public class ValidarLogin {
 
@@ -42,7 +44,6 @@ public class ValidarLogin {
 		return tipoPessoa;
 	}
 
-	@SuppressWarnings("resource")
 	public static String validaLoginPersonal(String cpf,String senha) {
 		
 		String tipoPessoa=null;
@@ -71,7 +72,6 @@ public class ValidarLogin {
 		return tipoPessoa;
 	}
 
-	@SuppressWarnings("resource")
 	public static String validaLoginFuncionario(String cpf, String senha) {
 		
 		String tipoPessoa=null;

@@ -29,16 +29,16 @@ public class Avaliacao{
 		this.agendamento = agendamento;
 	}
 
-	
+	public String formatarArquivoAvaliacao() {
+		return agendamento.formatarArquivoAgendamento() + ";" + descricao;
+	}
 
 	@Override
 	public String toString() {
 		return "Avaliacao [descricao=" + descricao + ", agendamento=" + agendamento + "]";
 	}
 
-	public String formatarArquivoAvaliacao() {
-		return agendamento.formatarArquivoAgendamento() + ";" + descricao;
-	}
+	
 
 	
 	

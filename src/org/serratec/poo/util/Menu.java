@@ -1,5 +1,6 @@
 package org.serratec.poo.util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.serratec.poo.classes.Login;
@@ -9,14 +10,26 @@ public class Menu {
 	static Cadastro cadastro=new Cadastro();
 	static int opcao = 1;
 	static boolean continua = true;
-	static Scanner leia = new Scanner(System.in);
-	static Login loginAtual;
 	
+	
+	public static void menuInicial() {
+		Scanner leia = new Scanner(System.in);
+		
+		do {
+		System.out.println("-----------Login-----------"+"\nCPF: ");
+		String cpf= leia.nextLine();
+		
+		System.out.println("Senha: ");
+		String senha=leia.nextLine();
+				
+		} while (continua);
+		leia.close();
+	}
 	
 	public static void menuPessoa(Login login1) {
 		
 		int menu=login1.getTipoconta();
-			loginAtual = login1;
+	
 			if(menu == 1){		
 			 Menu.menuAluno();
 			}else if(menu==2){
@@ -24,11 +37,12 @@ public class Menu {
 			} else if(menu==3){
 			Menu.menuFuncionario();
 			}
-		
 	}
-			
+	
+	
+	
 	public static void menuAluno() {
-		
+		Scanner leia = new Scanner(System.in);
 		while(opcao!=0) {
 			System.out.println( """
 					----------- MENU -----------
@@ -49,7 +63,7 @@ public class Menu {
 		switch(opcao){
 					
 		case 1 :
-			AdministracaoAluno.dadosAlunos(loginAtual);
+			
 			break;
 			
 		case 2 :
@@ -57,16 +71,20 @@ public class Menu {
 			break;
 		
 		case 3 :
+		
 			break;		
 			
 		case 4 :
+		
 			break;
 		
 		case 5 :
+		
 			break;
 			
 		default:
 			System.out.println("Numero Invalido");
+			
 		}
 
 	}while(continua);
@@ -74,7 +92,7 @@ public class Menu {
 }
 		
 	public static void menuPersonal() {
-		
+		Scanner leia = new Scanner(System.in);
 		
 	
 		while(opcao!=0){
@@ -100,8 +118,9 @@ public class Menu {
 		case 2:
 			Cadastro.criarAvalicao();
 			break;
-							
+		
 		case 3:
+			
 			break;	
 		
 		default:
@@ -114,6 +133,8 @@ public class Menu {
 }
 
 	public static void menuFuncionario() {
+		
+		Scanner leia = new Scanner(System.in);
 		
 		while(opcao!=0){
 			System.out.println("""
@@ -134,26 +155,32 @@ public class Menu {
 		
 		case 1:
 			Cadastro.cadastraPlano();
+			opcao = 10;
 			break;	
 			
 		case 2:
 			Cadastro.cadastraAluno();
+			opcao = 10;
 			break;	
 			
 		case 3:
 			Cadastro.cadastraPersonal();
+			opcao = 10;
 			break;
 			
 		 case 4:
 			Emitir.relatorioPlanos(Cadastro.todosPlanos);
+			opcao = 10;
 			break;
 	        
 		case 5:
 			Emitir.relatorioAluno(Cadastro.todosAlunos);
+			opcao = 10;
 			break;
 			
 		case 6:
 			Emitir.relatorioPersonal(Cadastro.todosPersonal);
+			opcao = 10;
 			break;	
 			
 		case 7:
@@ -164,9 +191,12 @@ public class Menu {
 			System.out.println("Numero Invalido");
 			break;
 		}
+		 			
+			
 		
 	}
-	leia.close();
+		
+		leia.close();
 }	
 	
 }

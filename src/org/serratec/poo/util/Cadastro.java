@@ -2,9 +2,15 @@ package org.serratec.poo.util;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.TemporalQuery;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
+
 import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
 import org.serratec.poo.classes.Avaliacao;
@@ -34,11 +40,14 @@ public class Cadastro {
 	public static List<Aluno> todosAlunos = new ArrayList<>();
 	public static List<Login> todosLogin = new ArrayList<>();
 	public static List<Funcionario> todosFuncionarios = new ArrayList<>();
-	public static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
 	static Plano planos;
-	static Scanner leia = new Scanner(System.in);
+	
 	
 	public static void cadastraPersonal(){
+		Scanner leia = new Scanner(System.in);
+		
+		LeitorArquivo.lerRelatorioPersonal(todosPersonal);
+		LeitorArquivo.lerArquivoLogin(todosLogin);
 		
 		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
@@ -79,12 +88,19 @@ public class Cadastro {
 		todosPersonal.add(personal);
 		
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
+		
 		EscreverArquivo.escreverArquivoPersonal(todosPersonal);
-			
+		
+		leia.close();
+		
 		}
 
-	@SuppressWarnings("unused")
 	public static void cadastraAluno(){
+		Scanner leia = new Scanner(System.in);
+		
+		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
+		LeitorArquivo.lerArquivoLogin(todosLogin);
+		LeitorArquivo.lerRelatorioAlunos(todosAlunos);
 		
 		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
@@ -118,11 +134,15 @@ public class Cadastro {
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoAlunos(todosAlunos);
+		
 		}
 
 	
 	public static void cadastraPlano(){
-				
+		Scanner leia = new Scanner(System.in);
+		
+		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
+		
 		System.out.println("Digite o Nome do Plano: ");
 		nome=leia.nextLine();
 		
@@ -141,11 +161,14 @@ public class Cadastro {
 		EscreverArquivo.escreverArquivoPlanos(todosPlanos);
 		}
 
-	
+	public static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
+
 	public static void criarAvalicao () {
 			
 		LeitorArquivo.lerArquivoAvalicao(todasAvaliacoes);
-					
+		
+			Scanner leia = new Scanner(System.in);
+			
 			for (Aluno aluno2 : todosAlunos) {
 				System.out.println("-" + aluno2.getNome() + "\n");
 			}
@@ -166,6 +189,7 @@ public class Cadastro {
 			
 			System.out.println("Qual o tipo da avaliação: ");
 			String descricaoAvaliacao=leia.nextLine();
+			
 			
 			Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
 			todasAvaliacoes.add (new Avaliacao(descricaoAvaliacao, agendamento));
