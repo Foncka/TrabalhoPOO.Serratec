@@ -23,6 +23,6 @@ public class Funcionario extends Pessoa{
 	
 	
 	public String formatarArquivoFuncionario() {
-		return super.getNome() + ";" + super.getCpf() + ";" + super.getSenha() + ";" + cargo + ";" + super.getDataNascimento();
+		return super.getNome()+"|"+super.getCpf()+"|"+ super.getSenha()+"|"+cargo+"|"+super.getDataNascimento();
 	}
 }

@@ -10,16 +10,16 @@ public class Menu {
 	static Cadastro cadastro=new Cadastro();
 	static int opcao = 1;
 	static boolean continua = true;
-	
+	static Scanner leia = new Scanner(System.in);
 	
 	public static void menuInicial() {
-		Scanner leia = new Scanner(System.in);
+		
 		
 		do {
-		System.out.println("-----------Login-----------"+"\nDigite seu CPF: ");
+		System.out.println("-----------Login-----------"+"\nCPF: ");
 		String cpf= leia.nextLine();
 		
-		System.out.println("Digite sua Senha: ");
+		System.out.println("Senha: ");
 		String senha=leia.nextLine();
 				
 		} while (continua);
@@ -42,7 +42,7 @@ public class Menu {
 	
 	
 	public static void menuAluno() {
-		Scanner leia = new Scanner(System.in);
+		
 		while(opcao!=0) {
 			System.out.println( """
 					----------- MENU -----------
@@ -63,28 +63,35 @@ public class Menu {
 		switch(opcao){
 					
 		case 1 :
-			
+			opcao = 10;
 			break;
 			
 		case 2 :
 			Cadastro.criarAvalicao();
+			opcao = 10;
 			break;
 		
 		case 3 :
-		
+			opcao = 10;
 			break;		
 			
 		case 4 :
-		
+			opcao = 10;
 			break;
 		
 		case 5 :
-		
+			opcao = 10;
 			break;
 			
+		case 0:
+			System.out.println("Programa Encerrado");
+			opcao = 0;
+			break;
+		
 		default:
-			System.out.println("Numero Invalido!");
-			
+			System.out.println("Numero Invalido");
+			break;
+		
 		}
 
 	}while(continua);
@@ -92,7 +99,7 @@ public class Menu {
 }
 		
 	public static void menuPersonal() {
-		Scanner leia = new Scanner(System.in);
+		
 		
 	
 		while(opcao!=0){
@@ -112,20 +119,27 @@ public class Menu {
 		switch(opcao){
 				
 		case 1:
-			
+			opcao = 10;
 			break;
 		
 		case 2:
-			
+			opcao = 10;
 			break;
 		
 		case 3:
-			
+			opcao = 10;
 			break;	
 		
-		default:
-			System.out.println("Numero Invalido! Insira novamente");
 			
+		case 0:
+			System.out.println("Numero Invalido");
+			opcao = 0;
+			break;
+		
+		default:
+			System.out.println("Programa Encerrado");
+			break;
+		
 		}
 		
 	}
@@ -133,8 +147,6 @@ public class Menu {
 }
 
 	public static void menuFuncionario() {
-		
-		Scanner leia = new Scanner(System.in);
 		
 		while(opcao!=0){
 			System.out.println("""
@@ -186,17 +198,20 @@ public class Menu {
 		case 7:
 			//[7] - Emitir relação de avaliações físicas por período
 			break;	
-			
+		case 0:
+			System.out.println("Programa Encerrado");
+			opcao = 0;
+			break;
+		
 		default:
-			System.out.println("Numero Invalido! Insira novamente");
+			System.out.println("Numero Invalido");
 			break;
 		}
 		 			
 			
 		
 	}
-		
-		leia.close();
+	leia.close();
 }	
 	
 }
