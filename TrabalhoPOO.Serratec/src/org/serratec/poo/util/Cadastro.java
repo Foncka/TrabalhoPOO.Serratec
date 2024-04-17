@@ -21,10 +21,8 @@ import org.serratec.poo.classes.Plano;
 
 
 public class Cadastro {
-	
 	static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
 	static LocalDate dataMatricula;
-	
 	static String nome;
 	static String cpf;
 	static String dataNascimento;
@@ -37,41 +35,35 @@ public class Cadastro {
 	static String duracao;
 	static String descricao;
 	static double valor;
-	
 	public static List<Plano> todosPlanos= new ArrayList<>();
 	public static List<PersonalTrainer> todosPersonal = new ArrayList<>();
 	public static List<Aluno> todosAlunos = new ArrayList<>();
 	public static List<Login> todosLogin = new ArrayList<>();
 	public static List<Funcionario> todosFuncionarios = new ArrayList<>();
-	
 	static Plano planos;
-	
+	static Scanner leia = new Scanner(System.in);
 	
 	public static void cadastraPersonal(){
-		Scanner leia = new Scanner(System.in);
 		
-		LeitorArquivo.lerRelatorioPersonal(todosPersonal);
-		LeitorArquivo.lerArquivoLogin(todosLogin);
-		
-		System.out.println("Digite seu Nome:");
+		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
 		
-		System.out.println("Digite seu CPF:");
+		System.out.println("Digite o CPF:");
 		cpf=leia.nextLine();
 		
-		System.out.println("Digite sua Data de Nascimento no formato (dd/MM/yyyy):");
+		System.out.println("Digite a Data de Nascimento(dd/MM/yyyy):");
 		dataNascimento=leia.nextLine();
 				
 		System.out.println("Digite o Contato:");
 		contato=leia.nextLine();
 		
-		System.out.println("Digite sua senha:");
+		System.out.println("Digite a senha:");
 		senha=leia.nextLine();
 		
 		System.out.println("Digite a especialidade:");
 		especialiadade=leia.nextLine();
 		
-		System.out.println("Digite o CREF:");
+		System.out.println("Digite a CREF:");
 		cref=leia.nextLine();
 		
 		System.out.println("Digite a Hora de Atendimento:");
@@ -92,33 +84,25 @@ public class Cadastro {
 		todosPersonal.add(personal);
 		
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
-		
 		EscreverArquivo.escreverArquivoPersonal(todosPersonal);
-		
-		leia.close();
-		
+			
 		}
 
 	public static void cadastraAluno(){
-		Scanner leia = new Scanner(System.in);
 		
-		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
-		LeitorArquivo.lerArquivoLogin(todosLogin);
-		LeitorArquivo.lerRelatorioAlunos(todosAlunos);
-		
-		System.out.println("Digite seu Nome:");
+		System.out.println("Digite o Nome:");
 		nome=leia.nextLine();
 		
-		System.out.println("Digite seu CPF:");
+		System.out.println("Digite o CPF:");
 		cpf=leia.nextLine();
 		
-		System.out.println("Digite sua Data de Nascimento no formato (dd/MM/yyyy):");
+		System.out.println("Digite a Data de Nascimento:");
 		dataNascimento=leia.nextLine();
 		
 		System.out.println("Digite o Contato:");
 		contato=leia.nextLine();
 		
-		System.out.println("Digite sua senha:");
+		System.out.println("Digite a senha:");
 		senha=leia.nextLine();
 		
 		System.out.println("Escolha um plano:");
@@ -138,15 +122,11 @@ public class Cadastro {
 		todosLogin.add(login);
 		EscreverArquivo.escreverArquivoLogin(todosLogin);
 		EscreverArquivo.escreverArquivoAlunos(todosAlunos);
-		
 		}
 
 	
 	public static void cadastraPlano(){
-		Scanner leia = new Scanner(System.in);
-		
-		LeitorArquivo.lerRelatorioPlanos(todosPlanos);
-		
+				
 		System.out.println("Digite o Nome do Plano: ");
 		nome=leia.nextLine();
 		
@@ -163,28 +143,30 @@ public class Cadastro {
 		todosPlanos.add(plano);
 		
 		EscreverArquivo.escreverArquivoPlanos(todosPlanos);
-		
-		leia.close();
 		}
 
 	static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
 
 	public static void criarAvalicao () {
 			
-			Scanner leia = new Scanner(System.in);
-			
-			System.out.println("Informe o nome do aluno: ");
+			System.out.println("Informe o nome aluno: ");
 			String alunoAvalicao=leia.nextLine();
 			
-			System.out.println("Informe do Personal Trainer: ");
+			System.out.println("Informe Personal Trainer: ");
 			String personalAvalicao=leia.nextLine();
 			
 			System.out.println("Informa a data e a hora: ");
 			String dataHoraAvalicao=leia.nextLine();
 			
-			System.out.println("Infotme qual o tipo da avaliação: ");
+			System.out.println("Qual o tipo da avaliação: ");
 			String descricaoAvaliacao=leia.nextLine();
 			
+			//Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
+			
+			//todasAvaliacoes.add (new Avaliacao(descricaoAvaliacao, agendamento));
+			
+			//LeitorArquivo.lerArquivoAvalicao(todasAvaliacoes);
+			//EscreverArquivo.escreverArquivoAvaliacao(todasAvaliacoes);
 			
 		}
 	

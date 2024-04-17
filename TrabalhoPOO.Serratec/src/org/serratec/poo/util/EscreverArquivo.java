@@ -24,9 +24,9 @@ public class EscreverArquivo {
 			 
 	        BufferedWriter bw = new BufferedWriter(new FileWriter("ListaDeAlunos.txt"));
 	        BufferedReader br = new BufferedReader(new FileReader("ListaDeAlunos.txt"));
-			for (Aluno a : alunos) {
+			for (Aluno p : alunos) {
 				    if(br.readLine() == null) {
-	                bw.append(a.formatarArquivoAluno()+"\n");
+	                bw.append(p.formatarArquivoAluno()+"\n");
 				    }
 	               	}
 	        
@@ -36,7 +36,7 @@ public class EscreverArquivo {
 			
 		}catch (IOException e){
 			
-			System.out.println("Erro ao Escrever a lista de Alunos");
+			System.out.println("Erro pipii popopo");
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class EscreverArquivo {
 
         }catch (IOException e){
 
-            System.out.println("Erro ao Escrever a lista de Planos ");
+            System.out.println("Erro pipii popopo");
         }
 	}
 	
@@ -77,7 +77,7 @@ public class EscreverArquivo {
 			
 		}catch (IOException e){
 			
-			System.out.println("Erro ao Escrever a lista de Personal");
+			System.out.println("Erro pipii popopo");
 		}
 	}
 
@@ -86,9 +86,9 @@ public class EscreverArquivo {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("ListaDeFuncionarios.txt"));
             BufferedReader br = new BufferedReader(new FileReader("ListaDeFuncionarios.txt"));
 			
-            for (Funcionario f : funcionarios) {
+            for (Funcionario p : funcionarios) {
 				 if(br.readLine() == null) {
-				bw.append(f.formatarArquivoFuncionario()+"\n");
+				bw.append(p.formatarArquivoFuncionario()+"\n");
 				 }
 			}
 			
@@ -98,7 +98,7 @@ public class EscreverArquivo {
 			
 		}catch (IOException e){
 			
-			System.out.println("Erro ao Escrever a lista de Funcionário");
+			System.out.println("Erro pipii popopo");
 		}
 	}
 
@@ -108,9 +108,9 @@ public static void escreverArquivoLogin(List<Login> login) {
 		BufferedWriter bw = new BufferedWriter(new FileWriter("ListaLogin.txt"));
         BufferedReader br = new BufferedReader(new FileReader("ListaLogin.txt"));
 		
-        for (Login l : login) {
+        for (Login p : login) {
 			 if(br.readLine() == null) {
-			bw.append(l.formatarArquivoLogin()+"\n");
+			bw.append(p.formatarArquivoLogin()+"\n");
 			 }
 		}
         bw.flush();
@@ -119,16 +119,16 @@ public static void escreverArquivoLogin(List<Login> login) {
 		
 	}catch (IOException e){
 		
-		System.out.println("Erro ao Escrever os Arquivos de Login");
+		System.out.println("Erro pipii popopo");
 	}
 }
 public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 	try {
 		BufferedWriter bw = new BufferedWriter(new FileWriter("ListaDeAvaliacao.txt"));
 		
-		for (Avaliacao a : avaliacao) {
+		for (Avaliacao p : avaliacao) {
 			
-			bw.append(a.formatarArquivoAvaliacao()+"\n");
+			bw.append(p.formatarArquivoAvaliacao()+"\n");
 		}
 		
 		bw.flush();
@@ -136,7 +136,7 @@ public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 		
 	}catch (IOException e){
 		
-		System.out.println("Erro ao Escrever os Arquivos da Avaliação");
+		System.out.println("Erro pipii popopo");
 	}
 }
 }

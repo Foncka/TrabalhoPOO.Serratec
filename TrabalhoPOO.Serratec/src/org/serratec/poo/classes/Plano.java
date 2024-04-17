@@ -37,17 +37,24 @@ public class Plano {
 	public String getDuracao() {
 		return duracao;
 	}
+
+	/*public LocalDate calcularDuracaoPlano() {
+		
+		
+		
+		return;
+	}*/
 	
 	@Override
 	public String toString() {
-		return "\nPlano: "+ nome + 
-				"\nDuracao: "+ duracao + 
-				"\nValor: " + valor + 
-				"\nDescricao: " + descricao;
+		return "Plano: "+ nome + 
+				"Duracao: "+ duracao + 
+				"Valor: " + valor + 
+				"Descricao: " + descricao;
 	}
 	
 	 public String formatarArquivoPlanos() {
-		 return nome + ","+ duracao + "," + descricao + "," + valor;
+		 return nome + ","+ duracao +","+ descricao+","+valor;
 	 }
 		 
 }

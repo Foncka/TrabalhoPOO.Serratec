@@ -23,10 +23,13 @@ public class ValidarLogin {
 			
 			String separador[] = linha.split(";");
 
+			
 			String cpfLog = separador[1];
 			String senhaLog = separador[2];
-				
+		
+			
 			if(cpf.equals(cpfLog) && senha.equals(senhaLog)) {
+				System.out.println("leu aluno");
 				tipoPessoa = "Aluno";
 			}
 		}
@@ -37,14 +40,15 @@ public class ValidarLogin {
 			
 			System.out.println(e.getMessage());
 		}
-		 return tipoPessoa;
+		 
+		return tipoPessoa;
 	}
 
 	public static String validaLoginPersonal(String cpf,String senha) {
 		
-		String tipoPessoa = null;
+		String tipoPessoa=null;
 		try {
-		BufferedReader br = new BufferedReader(new FileReader("ListaDePersonal.txt"));
+		BufferedReader br = new BufferedReader( new FileReader("ListaDePersonal.txt"));
 		String linha;
 		
 		linha = br.readLine();
@@ -57,7 +61,7 @@ public class ValidarLogin {
 			String senhaLog = separador[2];
 			
 			if(cpf.equals(cpfLog) && senha.equals(senhaLog)) {
-				tipoPessoa = "Personal";
+				tipoPessoa ="Personal";
 			}		
 		}
 		
@@ -84,7 +88,7 @@ public class ValidarLogin {
 			String senhaLog = separador[2];
 			
 			if(cpf.equals(cpfLog) && senha.equals(senhaLog)) {
-				tipoPessoa = "Funcionario";
+				tipoPessoa ="Funcionario";
 			}		
 		}
 		

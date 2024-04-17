@@ -19,10 +19,10 @@ public class SistemaAcademia {
     public void visualizarListaPersonalTrainers() {
         for (PersonalTrainer pt: personalTrainers) {
         
-        System.out.println("\nPersonal Trainer: " + personalTrainers + 
-        					"\nAluno: " + pt.getNome() + 
-        					"\nCPF: " + pt.getCpf() +
-        					"\nHora de Atendimento: " + pt.getHoraAtendimento());
+        System.out.println("Personal Trainer: " + personalTrainers + 
+                " Aluno: " + pt.getNome() + 
+                " CPF: " + pt.getCpf() +
+                " Hora de Atendimento: " + pt.getHoraAtendimento());
         }
     }
     

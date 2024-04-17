@@ -42,9 +42,9 @@ public class MenuIniciar {
 		case 5 :
 		
 			break;
-			
+	
 		default:
-			System.out.println("Numero Invalido!");
+			System.out.println("Numero Invalido");
 			leia.next();
 		}
 	}while(continua);

@@ -36,7 +36,7 @@ public class Avaliacao{
 
 	@Override
 	public String toString() {
-		return "Avaliacao \ndescricao: " + descricao + "\nagendamento: " + agendamento;
+		return "Avaliacao [descricao=" + descricao + ", agendamento=" + agendamento + "]";
 	}
 
 	
