@@ -1,0 +1,7 @@
+Lucas;36385498700;lucas789;Administrador;1993-11-29
+Ana Clara Oliveira;43278932100;anaclara123;Faxineiro;1981-09-07
+Miguel;98745352100;miguel123;Chefe;1990-08-15
+Matheus;12649632100;matheus123;Monitor;1985-04-20
+Arthur;45634512300;arthur123;Administrador;1998-12-10
+Kaiky;65433498700;kaiky123;Faxineiro;1982-06-25
+Thiago;14734536900;thiago123;Chefe;1977-03-30
