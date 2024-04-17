@@ -4,10 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-
+import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
 import org.serratec.poo.classes.Avaliacao;
 import org.serratec.poo.classes.Funcionario;
@@ -147,11 +145,10 @@ public class LeitorArquivo {
 				String personalAvalicao = separador[1];
 				String dataHoraAvalicao = separador [2];
 				String descricaoAvaliacao = separador[3];
-				List<Login> agendamento;
 				
-				//agendamento.add(new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao));
+				Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
 				
-				//todasAvaliacoes.add(new Avaliacao(descricaoAvaliacao,agendamento));
+				todasAvaliacoes.add(new Avaliacao(descricaoAvaliacao,agendamento));
 				
 			}
 			br.close();
@@ -160,6 +157,8 @@ public class LeitorArquivo {
 		}
 		
 	}
+		
+	
 	
 	public static void lerRelatorioFuncionario(List<Funcionario> funcionarios) {
 		try {

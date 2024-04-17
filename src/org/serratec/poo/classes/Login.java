@@ -6,19 +6,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import org.serratec.poo.util.Cadastro;
 import org.serratec.poo.util.EscreverArquivo;
 import org.serratec.poo.util.LeitorArquivo;
-import org.serratec.poo.util.Menu;
 
 public class Login {
 	
 	private String cpfLogin;
 	private String senhaLogin;
 	private int tipoConta;
-	private  boolean valida = false;
-	
+	static Scanner leia = new Scanner(System.in);
 	public Login(String cpfLogin, String senhaLogin, int tipoConta) {
 		this.cpfLogin = cpfLogin;
 		this.senhaLogin = senhaLogin;
@@ -53,13 +50,15 @@ public class Login {
         LeitorArquivo.lerRelatorioAlunos(Cadastro.todosAlunos);
         LeitorArquivo.lerRelatorioPersonal(Cadastro.todosPersonal);
         LeitorArquivo.lerRelatorioFuncionario(Cadastro.todosFuncionarios);
+        LeitorArquivo.lerArquivoAvalicao(Cadastro.todasAvaliacoes);
+        EscreverArquivo.escreverArquivoAvaliacao(Cadastro.todasAvaliacoes);
         EscreverArquivo.escreverArquivoPlanos(Cadastro.todosPlanos);
         EscreverArquivo.escreverArquivoAlunos(Cadastro.todosAlunos);
         EscreverArquivo.escreverArquivoPersonal(Cadastro.todosPersonal);
         EscreverArquivo.escreverArquivoFuncionarios(Cadastro.todosFuncionarios);
-		
+       
+                
         
-        Scanner leia = new Scanner(System.in);
 		String cpf;
 		String senha = null;
 		String validador;
@@ -147,8 +146,4 @@ public class Login {
 		return cpfLogin + ";"+ senhaLogin +";"+ tipoConta;
 		}
 
-	
-	
-
-	
 }

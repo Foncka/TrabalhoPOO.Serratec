@@ -1,9 +1,8 @@
 package org.serratec.poo.util;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.serratec.poo.classes.Aluno;
+import org.serratec.poo.classes.Avaliacao;
 import org.serratec.poo.classes.Funcionario;
 import org.serratec.poo.classes.PersonalTrainer;
 import org.serratec.poo.classes.Plano;
@@ -61,5 +60,12 @@ public class Emitir {
 		                System.out.println(funcionario.toString());
    }
 }
+	public static void visualizarAgendaAtendimentos(List<Avaliacao> avaliacao) {
+        for (Avaliacao pt: avaliacao) {
+        
+        System.out.println(pt.getAgendamento() + "\n" + pt.getDescricao());
+             
+        }
+    }
 }
 

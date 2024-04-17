@@ -1,20 +1,17 @@
 package org.serratec.poo.classes;
 
-import java.time.LocalDateTime;
-
 public class Agendamento {
 	
-	private Aluno aluno;
-	private PersonalTrainer personal;
-	private LocalDateTime dataHora;
-	//private List<Avaliacao> avaliacao;
+	private String aluno;
+	private String personal;
+	private String dataHora;
 	private boolean status = true;
 	
-	public Agendamento(Aluno aluno, PersonalTrainer personal, LocalDateTime dataHora) {
+	public Agendamento(String alunoAvalicao, String personalAvalicao, String dataHoraAvalicao) {
 		
-		this.aluno = aluno;
-		this.personal = personal;
-		this.dataHora = dataHora;
+		this.aluno = alunoAvalicao;
+		this.personal = personalAvalicao;
+		this.dataHora = dataHoraAvalicao;
 		
 	}
 	
@@ -27,19 +24,19 @@ public class Agendamento {
 		return status;
 	}
 	
-	public Aluno getAluno() {
+	public String getAluno() {
 		return aluno;
 	}
 
-	public PersonalTrainer getPersonal() {
+	public String getPersonal() {
 		return personal;
 	}
 
-	public LocalDateTime getDataHora() {
+	public String getDataHora() {
 		return dataHora;
 	}
 	
-	public void setDataHora(LocalDateTime dataHora) {
+	public void setDataHora(String dataHora) {
 		this.dataHora = dataHora;
 	}
 	
@@ -51,19 +48,21 @@ public class Agendamento {
 	public String toString() {
 		return "\nAluno: " + aluno + ""
 				+ "\nPersonal: " + personal 
-				+ "\nData e Horário: " + dataHora
-				+ "\nStatus:" + status;
+				+ "\nData e Horário: " + dataHora;
+				
 	}
 
 	
-	//---REAVALIAR ESSE METODO---
-	public void remarcarDataHora(LocalDateTime dataHora) {
+	public void remarcarDataHora(String dataHora) {
 		this.dataHora = dataHora;
 		
 	}
 	
-	////Metodo para verificar status agendamento
 	public String verificaStatus() {
 		return (status)?"Confirmado" :"Desmarcado";
+	}
+	
+	public String formatarArquivoAgendamento() {
+		return aluno + ";" + personal + ";" + dataHora;
 	}
 }

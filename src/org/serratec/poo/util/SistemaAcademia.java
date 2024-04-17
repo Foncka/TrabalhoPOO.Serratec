@@ -1,28 +1,16 @@
 package org.serratec.poo.util;
 
-import java.util.ArrayList;
-
-import org.serratec.poo.classes.PersonalTrainer;
-
+import java.util.List;
+import org.serratec.poo.classes.Avaliacao;
 
 public class SistemaAcademia {
-    private ArrayList<PersonalTrainer> personalTrainers;
 
-    public SistemaAcademia() {
-        this.personalTrainers = new ArrayList<>();
-    }
-
-    public void adicionarPersonalTrainer(PersonalTrainer personalTrainer) {
-        personalTrainers.add(personalTrainer);
-    }
-
-    public void visualizarListaPersonalTrainers() {
-        for (PersonalTrainer pt: personalTrainers) {
+   
+    public void visualizarListaPersonalTrainers(List<Avaliacao> avaliacao) {
+        for (Avaliacao pt: avaliacao) {
         
-        System.out.println("Personal Trainer: " + personalTrainers + 
-                " Aluno: " + pt.getNome() + 
-                " CPF: " + pt.getCpf() +
-                " Hora de Atendimento: " + pt.getHoraAtendimento());
+        System.out.println(pt.getAgendamento() + "\n" + pt.getDescricao());
+             
         }
     }
     

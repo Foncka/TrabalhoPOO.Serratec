@@ -1,6 +1,5 @@
 package org.serratec.poo.util;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.serratec.poo.classes.Login;
@@ -11,25 +10,13 @@ public class Menu {
 	static int opcao = 1;
 	static boolean continua = true;
 	static Scanner leia = new Scanner(System.in);
+	static Login loginAtual;
 	
-	public static void menuInicial() {
-		
-		
-		do {
-		System.out.println("-----------Login-----------"+"\nCPF: ");
-		String cpf= leia.nextLine();
-		
-		System.out.println("Senha: ");
-		String senha=leia.nextLine();
-				
-		} while (continua);
-		leia.close();
-	}
 	
 	public static void menuPessoa(Login login1) {
 		
 		int menu=login1.getTipoconta();
-	
+			loginAtual = login1;
 			if(menu == 1){		
 			 Menu.menuAluno();
 			}else if(menu==2){
@@ -37,10 +24,9 @@ public class Menu {
 			} else if(menu==3){
 			Menu.menuFuncionario();
 			}
+		
 	}
-	
-	
-	
+			
 	public static void menuAluno() {
 		
 		while(opcao!=0) {
@@ -63,7 +49,7 @@ public class Menu {
 		switch(opcao){
 					
 		case 1 :
-			
+			AdministracaoAluno.dadosAlunos(loginAtual);
 			break;
 			
 		case 2 :
@@ -71,20 +57,16 @@ public class Menu {
 			break;
 		
 		case 3 :
-		
 			break;		
 			
 		case 4 :
-		
 			break;
 		
 		case 5 :
-		
 			break;
 			
 		default:
 			System.out.println("Numero Invalido");
-			
 		}
 
 	}while(continua);
@@ -112,15 +94,14 @@ public class Menu {
 		switch(opcao){
 				
 		case 1:
-			
+			Emitir.visualizarAgendaAtendimentos(Cadastro.todasAvaliacoes);
 			break;
 		
 		case 2:
-			
+			Cadastro.criarAvalicao();
 			break;
-		
+							
 		case 3:
-			
 			break;	
 		
 		default:
@@ -153,32 +134,26 @@ public class Menu {
 		
 		case 1:
 			Cadastro.cadastraPlano();
-			
 			break;	
 			
 		case 2:
 			Cadastro.cadastraAluno();
-			
 			break;	
 			
 		case 3:
 			Cadastro.cadastraPersonal();
-			
 			break;
 			
 		 case 4:
 			Emitir.relatorioPlanos(Cadastro.todosPlanos);
-			
 			break;
 	        
 		case 5:
 			Emitir.relatorioAluno(Cadastro.todosAlunos);
-		
 			break;
 			
 		case 6:
 			Emitir.relatorioPersonal(Cadastro.todosPersonal);
-			
 			break;	
 			
 		case 7:
@@ -189,8 +164,6 @@ public class Menu {
 			System.out.println("Numero Invalido");
 			break;
 		}
-		 			
-			
 		
 	}
 	leia.close();

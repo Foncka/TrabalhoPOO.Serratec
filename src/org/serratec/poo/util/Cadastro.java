@@ -2,15 +2,9 @@ package org.serratec.poo.util;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.time.temporal.TemporalQuery;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
-
 import org.serratec.poo.classes.Agendamento;
 import org.serratec.poo.classes.Aluno;
 import org.serratec.poo.classes.Avaliacao;
@@ -40,6 +34,7 @@ public class Cadastro {
 	public static List<Aluno> todosAlunos = new ArrayList<>();
 	public static List<Login> todosLogin = new ArrayList<>();
 	public static List<Funcionario> todosFuncionarios = new ArrayList<>();
+	public static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
 	static Plano planos;
 	static Scanner leia = new Scanner(System.in);
 	
@@ -88,6 +83,7 @@ public class Cadastro {
 			
 		}
 
+	@SuppressWarnings("unused")
 	public static void cadastraAluno(){
 		
 		System.out.println("Digite o Nome:");
@@ -145,28 +141,36 @@ public class Cadastro {
 		EscreverArquivo.escreverArquivoPlanos(todosPlanos);
 		}
 
-	static List<Avaliacao> todasAvaliacoes = new ArrayList<>();
-
+	
 	public static void criarAvalicao () {
 			
-			System.out.println("Informe o nome aluno: ");
+		LeitorArquivo.lerArquivoAvalicao(todasAvaliacoes);
+					
+			for (Aluno aluno2 : todosAlunos) {
+				System.out.println("-" + aluno2.getNome() + "\n");
+			}
+			System.out.println("Informe um aluno da lista acima: ");
 			String alunoAvalicao=leia.nextLine();
 			
-			System.out.println("Informe Personal Trainer: ");
+			for (PersonalTrainer personal2 : todosPersonal) {
+				System.out.println("-" + personal2.getNome() + "\n");
+			}
+			System.out.println("Informe um Personal Trainer da lista acima: ");
 			String personalAvalicao=leia.nextLine();
 			
-			System.out.println("Informa a data e a hora: ");
+			for (PersonalTrainer personal2 : todosPersonal) {
+				System.out.println("-" + personal2.getNome() + "-" + personal2.getHoraAtendimento() + "\n");
+			}
+			System.out.println("Informa uma data (dd/mm/aa) e a hora (00:00) da lista acima : ");
 			String dataHoraAvalicao=leia.nextLine();
 			
 			System.out.println("Qual o tipo da avaliação: ");
 			String descricaoAvaliacao=leia.nextLine();
 			
-			//Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
+			Agendamento agendamento = new Agendamento(alunoAvalicao, personalAvalicao, dataHoraAvalicao);
+			todasAvaliacoes.add (new Avaliacao(descricaoAvaliacao, agendamento));
 			
-			//todasAvaliacoes.add (new Avaliacao(descricaoAvaliacao, agendamento));
-			
-			//LeitorArquivo.lerArquivoAvalicao(todasAvaliacoes);
-			//EscreverArquivo.escreverArquivoAvaliacao(todasAvaliacoes);
+			EscreverArquivo.escreverArquivoAvaliacao(todasAvaliacoes);
 			
 		}
 	

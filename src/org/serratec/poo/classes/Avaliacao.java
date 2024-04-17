@@ -29,17 +29,16 @@ public class Avaliacao{
 		this.agendamento = agendamento;
 	}
 
-	public String formatarArquivoAvaliacao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public String toString() {
 		return "Avaliacao [descricao=" + descricao + ", agendamento=" + agendamento + "]";
 	}
 
-	
+	public String formatarArquivoAvaliacao() {
+		return agendamento.formatarArquivoAgendamento() + ";" + descricao;
+	}
 
 	
 	

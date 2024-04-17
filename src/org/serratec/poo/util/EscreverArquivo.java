@@ -122,13 +122,17 @@ public static void escreverArquivoLogin(List<Login> login) {
 		System.out.println("Erro pipii popopo");
 	}
 }
+
+@SuppressWarnings("resource")
 public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 	try {
 		BufferedWriter bw = new BufferedWriter(new FileWriter("ListaDeAvaliacao.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("ListaDeAvaliacao.txt"));
 		
 		for (Avaliacao p : avaliacao) {
-			
-			bw.append(p.formatarArquivoAvaliacao()+"\n");
+			if(br.readLine() == null) {
+				bw.append(p.formatarArquivoAvaliacao()+"\n");
+				 }
 		}
 		
 		bw.flush();
@@ -139,4 +143,6 @@ public static void escreverArquivoAvaliacao(List<Avaliacao> avaliacao) {
 		System.out.println("Erro pipii popopo");
 	}
 }
+
+
 }
